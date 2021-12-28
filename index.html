@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <title>Owen Schandle</title>
+    <meta name="description" content="Owen Schandle personal website">
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body>
+  <div class="sidebar">
+    <ul>
+      <li><a href="#dev">Software Development</a>
+    </ul>
+    <hr>
+    <ul>
+      <li><a href="https://github.com/xyshal">Github</a>
+      <li><a href="https://linkedin.com/in/owen-schandle-98ab157b">LinkedIn</a>
+      <li><a href="https://flickr.com/photos/schandle">Flickr</a>
+      <li><a href="https://strava.com/athletes/30071180">Strava</a>
+      <li><a href="https://trakt.tv/users/xyshal">Trakt.tv</a>
+      <li><a href="https://twitter.com/xyshal">Twitter</a>
+      <li><a href="https://music.apple.com">Apple Music</a>
+    </ul>
+  </div>
+  <div class="content">
+    <center>
+      <h1 id="top"><font size=7>Owen Schandle</font></h1>
+    </center>
+    <p>As this static, Web 1.0 nonsense clearly demonstrates, I am not a web developer.
+    You should be happy there's even any CSS.  Here, though, are some
+    things that I <i>am</i> interested in:</p>
+    <hr>
+    <center>
+      <h2 id="dev">Software Development</h2>
+    </center>
+    <p>I've always liked computers.  When I was a kid I learned the basics of
+    C, wrote stupid games for the TI-89, and spent a massive amount of time
+    playing Mystical MUD.</p>
+    <p>Most of my professional life has been spent developing C++ desktop
+    applications, doing basic sysadmin work, and writing scripts to automate a
+    variety of things.  Often I have some spare cycles for contract work in
+    this area, so reach out if you're interested.</p>
+    <p><a href="https://github.com/xyshal">Here</a> is my Github.  There's not
+    much on it, but my dotfiles are there to critique, and I recently wrote a
+    Qt application designed to visualize and gather statistics about how many
+    counties in the United States you've visited.</p>
+    <p>Here are some of my firm philosophical positions, in no particular order:
+    <ul>
+      <li>Defining contracts.  The expectations of any piece of code should be
+        able to be understood without comment.  Asserts.  Const correctness.
+        These days, can this be constexpr?
+      <li>Speaking of comments, I use them to break up functions into sections
+        and to document things that should be changed.  Outside of this, only
+        especially complicated logic should have comments -- strive to write
+        code that is readable without comments.
+      <li>Your commit log should explain why, not what.  I can look at the diff
+        and see what the commit did.  I should be able to look at a comment
+        explaining what a particularly complex bit of code does if I'm trying
+        to understand the what.  I am looking back at the history of this
+        function because I want to understand <b>why</b> some decision was
+        made; what the intention of this API was, et cetera.
+      <li>Clarity over brevity.  Only use auto for things like `auto* p = new
+        LongClassName&lt;Template&gt;();`  Or the result of std::find.  Things
+        like that.  Don't you dare `auto f = function_call();` me.  C++ is a
+        strongly typed language for a reason.
+      <li><a href="https://www.youtube.com/watch?v=Dw0UBuTKHHg">west const</a>
+        is the only acceptable choice.
+      <li>Clarity over optimization.  Premature optimization yields unreadable
+        (and thus unmaintainable) code.  Save structure packing,
+        (non-automatic) cache optimization, and whatnot for code that actually
+        needs to be fast.
+      <li>With the above said, don't make ridiculous decisions.  Use
+        std::unordered_map unless your map needs to always be sorted.
+        Profile things as a matter of course -- if you're writing some class
+        that is meant to support 1000 things...  profile how it behaves
+        supporting 100,000 things.  Find your stupid mistakes.
+      <li>Compile and run the tests with sanitizers.
+      <li>Test-driven development isn't a necessity, but it's a good idea.
+      <li>Outsource to third party libraries whenever possible.  The chances
+        are quite low you are going to write a better library for some common
+        protocol in which you are not an expert.  For C++, <a href="https://conan.io">conan</a>
+        is great.  Keep those libraries up-to-date as a matter of course.
+      <li>Aside from the perennial "what should this be named?" discussion,
+        nothing spends more time than discussion during code reviews about code
+        style.  Eliminate that time completely and enforce a clang-format file
+        on your codebase.  It doesn't even matter what the format is, just pick
+        something.  That way if you want to see it differently, have checkout
+        and commit hooks that format it the way <i>you'd</i> like.
+      <li>Stop doing things and running services as root.  It shocks me how
+        often I still see people wrecking permissions and risking exploitation
+        with this.
+      <li>Standardize the build environment.  Docker, configuration management,
+        anything you need to do so that there aren't errors that only happen on
+        the build system.
+      <li>Use <a href="https://www.vim.org">vim</a>.  Eight megabytes and
+        constantly swapping!
+    </ul>
+    Here is a haiku I wrote that in no way reflects my perpetual experience
+    with memory management:<br><br>
+    <center><font size=2>Memory access<br>Then, something
+        unexpected<br>Segmentation Fault</font></center>
+    <br>
+    <hr>
+  </div>
+  </body>
+</html>
+
